@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.Random;
 
 public class HomeWork4 {
@@ -19,7 +20,7 @@ public class HomeWork4 {
     public static void Task_2_and_3() {
         /*Задача 2: Найти минимальный-максимальный элементы и вывести в консоль.
           Задача 3: Найти индексы минимального и максимального элементов и вывести в консоль.*/
-        System.out.println("\n\nВторая задача");
+        System.out.println("\n\nВторая-Третья задача");
         int[] mass = {5, -3, 17, 0, 42, -10, 8};
         int min = mass[0];
         int max = min;
@@ -42,14 +43,14 @@ public class HomeWork4 {
     public static void Task_4() {
     /* Найти и вывести количество нулевых элементов.
        Если нулевых элементов нет - вывести сообщение, что их нет. */
-        System.out.println("Четвертая задача");
+        System.out.println("\nЧетвертая задача");
         Random random = new Random();
-        int sizeMassive = 100;
+        int sizeMassive = 50;
         int[] array = new int[sizeMassive];
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100) - 50;
         }
-        System.out.println("Массив: ");
+        System.out.print("Массив: ");
         for (int num : array) {
             System.out.print(num + " ");
         }
@@ -69,18 +70,19 @@ public class HomeWork4 {
     public static void Task_5() {
         /*Пройти по массиву и поменять местами элементы первый и последний, второй и
         предпоследний и т.д*/
-        System.out.println("Пятая задача");
-        int[] mass = {10, 20, 30, 40, 50, 60, 70 };
-        System.out.println("Массив до преобразований: ");
+        System.out.print("\nПятая задача");
+        int[] mass = {10, 20, 30, 40, 50, 60, 70};
+        System.out.print("\nМассив до преобразований: ");
         for (int num : mass) {
-            System.out.print(num + " ");}
+            System.out.print(num + " ");
+        }
         for (int i = 0; i < mass.length / 2; i++) {
             int j = mass.length - 1 - i;
             int temp = mass[i];
             mass[i] = mass[j];
             mass[j] = temp;
         }
-        System.out.println("\nМассив после преобразований: ");
+        System.out.print("\nМассив после преобразований: ");
         for (int num : mass) {
             System.out.print(num + " ");
         }
@@ -89,8 +91,8 @@ public class HomeWork4 {
     public static void Task_6() {
     /*Проверить, является ли массив возрастающей последовательностью (каждое следующее
       число больше предыдущего).*/
-        System.out.println("Шестая задача");
-        int[] mass = {10, 20, 30, 40, 50, 60, 70 };
+        System.out.println("\n\nШестая задача");
+        int[] mass = {10, 20, 30, 40, 50, 60, 70};
         //int[] mass = {10, 20, 300, 40, 50, 60, 70};
         //int[] mass = {10, 20, 30, 40, 40, 60, 70 };
         boolean isIncreasing = true;
@@ -115,16 +117,46 @@ public class HomeWork4 {
 Пример:
 Input: [1,4,0,5,6,3] Output: [1,4,0,5,6,4]
 Input: [9,9,9] Output: [1,0,0,0] */
-
-
+        System.out.println("\nСедьмая задача, со *");
+        int[] mass = {1, 9, 9};
+        //int[] mass = {9, 9, 9};
+        //int[] mass = {1, 2, 3};
+        int plusOne = 1;
+        System.out.print("Массив до преобразований: ");
+        for (int num : mass) {
+            System.out.print(num + " ");
+        }
+        for (int i = mass.length - 1; i >= 0; i--) {
+            if ((mass[i] + plusOne) == 10) {
+                mass[i] = 0;
+                plusOne = 1;
+            } else {
+                mass[i] = mass[i] + plusOne;
+                plusOne = 0;
+            }
+        }
+        System.out.print("\nМассив после преобразований: ");
+        if (plusOne == 0) {
+            for (int num : mass) {
+                System.out.print(num + " ");
+            }
+        } else {
+            int[] newMass = new int[mass.length + 1];
+            newMass[0] = 1;
+            for (int num : newMass) {
+                System.out.print(num + " ");
+            }
+        }
     }
 
-        public static void main(String[] args) {
-     //   Task_1();
-      //  Task_2_and_3();
-      //  Task_4();
-     //   Task_5();
-       //Task_6();
-            Task_7();
+
+    public static void main(String[] args) {
+        Task_1();
+        Task_2_and_3();
+        Task_4();
+        Task_5();
+        Task_6();
+        Task_7();
+        System.out.print("\n\nВсем спасибо! ");
     }
 }

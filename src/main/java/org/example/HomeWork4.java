@@ -66,9 +66,30 @@ public class HomeWork4 {
         }
     }
 
-    public static void main(String[] args) {
+    public static void Task_5() {
+        System.out.println("Пятая задача");
+        int[] mass = {10, 20, 30, 40, 50, 60, 70 };
+        System.out.println("Массив до преобразований: ");
+        for (int num : mass) {
+            System.out.print(num + " ");}
+        for (int i = 0; i < mass.length / 2; i++) {
+            int j = mass.length - 1 - i;
+            int temp = mass[i];
+            mass[i] = mass[j];
+            mass[j] = temp;
+        }
+        System.out.println("\nМассив после преобразований: ");
+        for (int num : mass) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void Task_6() {
+
+        public static void main(String[] args) {
      //   Task_1();
       //  Task_2_and_3();
-        Task_4();
+      //  Task_4();
+     //   Task_5();
     }
 }

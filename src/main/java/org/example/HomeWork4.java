@@ -1,4 +1,5 @@
 package org.example;
+import java.util.Random;
 
 public class HomeWork4 {
     public static void Task_1() {
@@ -38,8 +39,36 @@ public class HomeWork4 {
         System.out.println("Максимальный элемент: " + max + " Индекс: " + maxInd);
     }
 
+    public static void Task_4() {
+    /* Найти и вывести количество нулевых элементов.
+       Если нулевых элементов нет - вывести сообщение, что их нет. */
+        System.out.println("Четвертая задача");
+        Random random = new Random();
+        int sizeMassive = 100;
+        int[] array = new int[sizeMassive];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) - 50;
+        }
+        System.out.println("Массив: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        int zero = 0;
+        for (int num : array) {
+            if (num == 0) {
+                zero = zero + 1;
+            }
+        }
+        if (zero == 0) {
+            System.out.println("\nВ массиве нулевых нетъ");
+        } else {
+            System.out.println("\nКоличество нулевых элементов: " + zero);
+        }
+    }
+
     public static void main(String[] args) {
-      //  Task_1();
-        Task_2_and_3();
+     //   Task_1();
+      //  Task_2_and_3();
+        Task_4();
     }
 }

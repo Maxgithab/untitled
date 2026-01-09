@@ -57,7 +57,7 @@ public class HomeWork5 {
 
         for (int i = 0; i < sizeMassive; i++) {
             for (int j = 1; j < sizeMassive; j++) {
-                if (matrix[i][j-1].equals("■")) {
+                if (matrix[i][j - 1].equals("■")) {
                     matrix[i][j] = "□";
                 } else {
                     matrix[i][j] = "■";
@@ -73,9 +73,68 @@ public class HomeWork5 {
         }
     }
 
+    public static void Task_3() {
+        /* Даны числа n и m. Создайте массив A[n][m] и заполните его змейкой (см. пример).
+        Формат входных данных: Программа получает на вход два числа n и m.
+        Формат выходных данных: Программа должна вывести полученный массив, отводя на вывод каждого числаровно 3
+        символа. */
+        System.out.println("Третья задача");
+        Scanner sc = new Scanner(System.in);
+        int n = 0, m = 0, count = 0;
+        while (true) {
+            System.out.println("Дай количество строк n, сюда, в консоль:");
+            if (sc.hasNextInt()) {
+                n = sc.nextInt();
+                if (n > 0) break;
+                System.out.println("Ну ты серьезно? Отрицательные!?");
+            } else {
+                System.out.println("Опять за старое?");
+                sc.next();
+            }
+        }
+
+        while (true) {
+            System.out.println("Дай количество столбцов m, сюда, в консоль:");
+            if (sc.hasNextInt()) {
+                m = sc.nextInt();
+                if (m > 0) break;
+                System.out.println("Ну ты серьезно? Отрицательные!?");
+            } else {
+                System.out.println("Опять за старое?");
+                sc.next();
+            }
+        }
+
+        int[][] A = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < m; j++) {
+                    A[i][j] = count;
+                    count++;
+                }
+                System.out.println();
+            } else {
+                for (int j = m - 1; j >= 0; j--) {
+                    A[i][j] = count;
+                    count++;
+                }
+            }
+        }
+        System.out.println("Массив вывод:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.printf("%3d", A[i][j]);
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+
+
     public static void main(String[] args) {
-       // Task_1();
-           Task_2();
+        Task_1();
+        Task_2();
+        Task_3();
 
     }
 }

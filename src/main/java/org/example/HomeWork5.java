@@ -40,14 +40,13 @@ public class HomeWork5 {
                 System.out.println("Ты что, дурачок?.. Просил дать целое число! Еще раз:");
             }
         }
-        sc.close();
     }
 
     public static void Task_2() {
     /*  Создать программу для раскраски шахматной доски с помощью цикла. Создать
         двумерный массив String 8х8. С помощью циклов задать элементам массива значения
         B(Black) или W(White). При выводе результат работы программы должен быть*/
-        System.out.println("Вторая задача");
+        System.out.println("\nВторая задача");
         int sizeMassive = 8;
         String[][] matrix = new String[sizeMassive][sizeMassive];
 
@@ -78,9 +77,9 @@ public class HomeWork5 {
         Формат входных данных: Программа получает на вход два числа n и m.
         Формат выходных данных: Программа должна вывести полученный массив, отводя на вывод каждого числаровно 3
         символа. */
-        System.out.println("Третья задача");
+        System.out.println("\nТретья задача");
         Scanner sc = new Scanner(System.in);
-        int n = 0, m = 0, count = 0;
+        int n, m, count = 0;
         while (true) {
             System.out.println("Дай количество строк n, сюда, в консоль:");
             if (sc.hasNextInt()) {
@@ -120,7 +119,7 @@ public class HomeWork5 {
                 }
             }
         }
-        System.out.println("Массив вывод:");
+        System.out.println("Массив змейкой:");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 System.out.printf("%3d", A[i][j]);
@@ -128,13 +127,12 @@ public class HomeWork5 {
             System.out.println();
         }
         sc.close();
-    }
-
+     }
 
     public static void main(String[] args) {
         Task_1();
         Task_2();
         Task_3();
-
+        System.out.print("\n\nВсем спасибо! ");
     }
 }

@@ -43,8 +43,39 @@ public class HomeWork5 {
         sc.close();
     }
 
+    public static void Task_2() {
+    /*  Создать программу для раскраски шахматной доски с помощью цикла. Создать
+        двумерный массив String 8х8. С помощью циклов задать элементам массива значения
+        B(Black) или W(White). При выводе результат работы программы должен быть*/
+        System.out.println("Вторая задача");
+        int sizeMassive = 8;
+        String[][] matrix = new String[sizeMassive][sizeMassive];
+
+        for (int i = 0; i < sizeMassive; i++) {
+            matrix[i][0] = (i % 2 == 0) ? "■" : "□";
+        }
+
+        for (int i = 0; i < sizeMassive; i++) {
+            for (int j = 1; j < sizeMassive; j++) {
+                if (matrix[i][j-1].equals("■")) {
+                    matrix[i][j] = "□";
+                } else {
+                    matrix[i][j] = "■";
+                }
+            }
+        }
+
+        for (int i = 0; i < sizeMassive; i++) {
+            for (int j = 0; j < sizeMassive; j++) {
+                System.out.print(" " + matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        Task_1();
+       // Task_1();
+           Task_2();
 
     }
 }

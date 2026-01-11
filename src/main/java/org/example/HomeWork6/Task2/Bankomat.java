@@ -36,8 +36,7 @@ public class Bankomat {
     }
 
     int allMoney() {
-        int allMon = banknote20 * 20 + banknote50 * 50 + banknote100 * 100;
-        return allMon;
+        return banknote20 * 20 + banknote50 * 50 + banknote100 * 100;
     }
 
     boolean needCash(int cashAmount) {
@@ -46,28 +45,29 @@ public class Bankomat {
             return false;
         }
 
-        int take100Amount = Math.min(cashAmount / 100, banknote100);
-        cashAmount -= take100Amount * 100;
-        int take50Amount = Math.min(cashAmount / 50, banknote50);
-        cashAmount -= take50Amount * 50;
-        int take20Amount = Math.min(cashAmount / 20, banknote20);
-        cashAmount -= take20Amount * 20;
+        for (int take100Amount = Math.min(cashAmount / 100, banknote100); take100Amount >= 0; take100Amount--) {
+            int restCashAfter100 = cashAmount - take100Amount * 100;
+            for (int take50Amount = Math.min(restCashAfter100 / 50, banknote50); take50Amount >= 0; take50Amount--) {
+                int restCashAfter50 = restCashAfter100 - take50Amount * 50;
 
-        if (cashAmount == 0) {
-            System.out.println("Выдано деняк:");
-            if (take100Amount > 0) System.out.println("100: " + take100Amount + " шт.");
-            if (take50Amount > 0) System.out.println("50: " + take50Amount + " шт.");
-            if (take20Amount > 0) System.out.println("20: " + take20Amount + " шт.");
+                if (restCashAfter50 % 20 == 0) {
+                    int take20Amount = restCashAfter50 / 20;
+                    if (take20Amount <= banknote20) {
+                        System.out.println("Выдано деняк:");
+                        if (take20Amount > 0) System.out.println("20: " + take20Amount + " шт.");
+                        if (take50Amount > 0) System.out.println("50: " + take50Amount + " шт.");
+                        if (take100Amount > 0) System.out.println("100: " + take100Amount + " шт.");
 
-            banknote100 -= take100Amount;
-            banknote50 -= take50Amount;
-            banknote20 -= take20Amount;
+                        banknote100 -= take100Amount;
+                        banknote50 -= take50Amount;
+                        banknote20 -= take20Amount;
 
-            return true;
-        } else {
-            return false;
+                        return true;
+                    }
+                }
+            }
         }
+        System.out.println("Не вариант, " + cashAmount + " не выдам тем что есть, сорян");
+        return false;
     }
-
-
 }

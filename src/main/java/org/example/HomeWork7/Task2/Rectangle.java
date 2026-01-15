@@ -1,7 +1,7 @@
 package org.example.HomeWork7.Task2;
 
 public class Rectangle extends Figure {
-    private double a, b;
+    private final double a, b;
 
     public Rectangle (double a, double b) {
         if (a <= 0 || b <= 0) {

@@ -1,7 +1,7 @@
 package org.example.HomeWork7.Task2;
 
 public class Circle extends Figure {
-    private double rad;
+    private final double rad;
 
     public Circle(double rad) {
         if (rad <= 0) {
@@ -11,10 +11,10 @@ public class Circle extends Figure {
     }
 
     public double area() {
-                return Math.PI* rad *rad;
+        return Math.PI * rad * rad;
     }
 
     public double perimeter() {
-        return (2 * Math.PI * rad);
+        return 2 * Math.PI * rad;
     }
 }

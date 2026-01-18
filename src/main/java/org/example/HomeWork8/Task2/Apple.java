@@ -11,7 +11,6 @@ public class Apple {
         return color;
     }
 
-
     public static void main(String[] args) {
         Apple apple = new Apple();
         System.out.println("Яблоко сейчас " + apple.getColor());

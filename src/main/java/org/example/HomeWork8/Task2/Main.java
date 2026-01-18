@@ -4,16 +4,13 @@ package org.example.HomeWork8.Task2;
 инициализировать его. В методе main другого класса создать объект Apple, и не
 используя сеттеры, изменить значение поля color.*/
 
-public class Apple {
-    private String color = "зеленое";
-
-    public String getColor() {
-        return color;
-    }
-
-
+public class Main {
     public static void main(String[] args) {
         Apple apple = new Apple();
-        System.out.println("Яблоко сейчас " + apple.getColor());
+        System.out.println("Яблоко всё ещё " + apple.getColor());
+
+        // Шаг 1 - пытаемся изменить напрямую, выдает ошибку
+        // apple.color = "красное"; //'color' has private access in 'org.example.HomeWork8.Task2.Apple'
+
     }
 }

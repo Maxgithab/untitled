@@ -12,5 +12,9 @@ public class Main {
         // Шаг 1 - пытаемся изменить напрямую, выдает ошибку
         // apple.color = "красное"; //'color' has private access in 'org.example.HomeWork8.Task2.Apple'
 
+        // Шаг 2 - пытаемся изменить через сеттер
+        apple.setColor("красное");
+        System.out.println("Теперь яблоко " + apple.getColor());
+
     }
 }

@@ -11,6 +11,10 @@ public class Apple {
         return color;
     }
 
+    // Сеттер (публичный метод для изменения)
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public static void main(String[] args) {
         Apple apple = new Apple();

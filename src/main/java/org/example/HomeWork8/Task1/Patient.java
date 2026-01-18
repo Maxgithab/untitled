@@ -1,4 +1,4 @@
-package org.example.HomeWork8;
+package org.example.HomeWork8.Task1;
 
 public class Patient {
     int treatmentPlan;

@@ -1,4 +1,4 @@
-package org.example.HomeWork8;
+package org.example.HomeWork8.Task1;
 
 /*Задача 1:
 Создать программу для имитации работы клиники. Пусть в клинике будет три врача:
@@ -14,7 +14,7 @@ package org.example.HomeWork8;
 
 public class Main {
     public static void main(String[] args) {
-        Patient iVan = new Patient(5);
+        Patient iVan = new Patient(2);
 
         Therapist therapist = new Therapist();
         therapist.treatPlan(iVan);

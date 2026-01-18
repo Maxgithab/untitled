@@ -4,8 +4,10 @@ package org.example.HomeWork8.Task2;
 инициализировать его. В методе main другого класса создать объект Apple, и не
 используя сеттеры, изменить значение поля color.*/
 
+import java.lang.reflect.Field;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Apple apple = new Apple();
         System.out.println("Яблоко всё ещё " + apple.getColor());
 
@@ -14,9 +16,12 @@ public class Main {
 
         // Шаг 2 - пытаемся изменить через сеттер
         apple.setColor("красное");
-        System.out.println("Теперь яблоко " + apple.getColor());
+        System.out.println("После сеттера яблоко стало" + apple.getColor());
 
-
-
+        // Шаг 4 - пытаемся изменить через Рефлексию
+        Field colorApple = Apple.class.getDeclaredField("color");
+        colorApple.setAccessible(true);
+        colorApple.set(apple, "испортилось");
+        System.out.println("Поздравляю! После рефлексии яблоко " + apple.getColor());
     }
 }

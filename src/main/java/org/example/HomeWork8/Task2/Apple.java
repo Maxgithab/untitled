@@ -16,8 +16,20 @@ public class Apple {
         this.color = color;
     }
 
+    public class Hacker {
+        String changeColor(String newColour) {
+            color = newColour; // имеет доступ к private полям внешнего класса
+        return newColour;
+        }
+    }
+
     public static void main(String[] args) {
         Apple apple = new Apple();
         System.out.println("Яблоко сейчас " + apple.getColor());
+
+        // Шаг 3 - пытаемся изменить внутренний класс
+        Apple.Hacker newApple = apple.new Hacker();
+        System.out.println("Яблоко после изменения внутреннего класса сейчас " + newApple.changeColor("красное"));
+
     }
 }

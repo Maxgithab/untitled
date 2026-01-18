@@ -16,5 +16,7 @@ public class Main {
         apple.setColor("красное");
         System.out.println("Теперь яблоко " + apple.getColor());
 
+
+
     }
 }

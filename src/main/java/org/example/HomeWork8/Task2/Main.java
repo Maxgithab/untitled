@@ -13,15 +13,17 @@ public class Main {
 
         // Шаг 1 - пытаемся изменить напрямую, выдает ошибку
         // apple.color = "красное"; //'color' has private access in 'org.example.HomeWork8.Task2.Apple'
+        System.out.println("При прямом обращении из-за Private цвет не поменяется");
+
 
         // Шаг 2 - пытаемся изменить через сеттер
         apple.setColor("красное");
-        System.out.println("После сеттера яблоко стало" + apple.getColor());
+        System.out.println("После сеттера яблоко стало " + apple.getColor());
 
         // Шаг 4 - пытаемся изменить через Рефлексию
         Field colorApple = Apple.class.getDeclaredField("color");
         colorApple.setAccessible(true);
         colorApple.set(apple, "испортилось");
-        System.out.println("Поздравляю! После рефлексии яблоко " + apple.getColor());
+        System.out.println("Поздравляю! После Рефлексии яблоко " + apple.getColor());
     }
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.HomeWork1_5;
 
 public class HomeWork1 {
     public static void Task_1() {

@@ -1,4 +1,4 @@
-package org.example.HomeWork10;
+package org.example.HomeWork10.Task1;
 
 import java.util.Objects;
 
@@ -13,8 +13,8 @@ public class User {
         this.e_mail = email;
     }
 
-    @Override  // без Стирнга, org.example.HomeWork10.User@7229724f,
-    public String toString() { // со Стригном User{id=1, name='NameName', email='e-mail@email.com'}
+    @Override                  // без Стринга, org.example.HomeWork10.Task1.User@7229724f,
+    public String toString() { // со Стрингом User{id=1, name='NameName', email='e-mail@email.com'}
         return "User{" + "id=" + id + ", name='" + name + '\'' + ", email='" + e_mail + '\'' + '}';
     }
 

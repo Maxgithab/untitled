@@ -1,4 +1,4 @@
-package org.example.HomeWork10;
+package org.example.HomeWork10.Task1;
 
 /*Задача 1:
 Создать класс для описания пользователя системы. Переопределить в классе методы

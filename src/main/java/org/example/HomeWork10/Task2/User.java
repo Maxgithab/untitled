@@ -52,4 +52,14 @@ public class User implements Cloneable {
         return cloneShallow;
     }
 
+    public User cloneDeep() {
+        System.out.println("Глубокое копирование:");
+        Address cloneAddress = null;
+        if (this.address != null) {
+            cloneAddress = this.address.clone();
+        }
+        User cloneDeep = new User(this.id, this.name, cloneAddress);
+        cloneDeep.friends = new ArrayList<>(this.friends);
+        return cloneDeep;
+    }
 }
